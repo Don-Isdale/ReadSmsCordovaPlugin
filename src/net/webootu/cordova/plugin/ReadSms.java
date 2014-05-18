@@ -1,7 +1,7 @@
 package net.webootu.cordova.plugin;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -129,7 +129,7 @@ public class ReadSms extends CordovaPlugin {
         while (cursor.moveToNext()) {
             JSONObject current = new JSONObject();
             try {
-                current.put("time_received", cursor.getString(cursor.getColumnIndex("date"));
+                current.put("time_received", cursor.getString(cursor.getColumnIndex("date")));
                 current.put("message", cursor.getString(cursor.getColumnIndex("body")));
                 Log.d(TAG, "time: " + cursor.getString(cursor.getColumnIndex("date"))
                         + " message: " + cursor.getString(cursor.getColumnIndex("body")));
